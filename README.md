@@ -5,10 +5,6 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-brain--fog--mode-7c3aed.svg)](skills/brain-fog-mode/)
 [![Feedback Welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg)](#reviewers-and-feedback)
 
-**GitHub About:** An Agent Skill that helps AI assistants reduce cognitive load, simplify decisions,
-and keep one clear next step when users are multitasking, stressed, foggy, or overloaded. Works for
-coding and everyday tasks.
-
 Brain Fog Mode is a beta Agent Skill that helps AI assistants reduce cognitive load, simplify
 decisions, and keep one clear next step when users are multitasking, stressed, foggy, or overloaded.
 It works for coding and everyday tasks.
