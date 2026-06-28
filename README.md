@@ -120,8 +120,7 @@ they are not medical certification or product endorsement.
 With permission, we will give review attribution in the repo by name, role, and reviewed scope. Anonymous
 or private feedback is also welcome.
 
-Feel free to leave feedback in the repo through issues, pull requests, or the reviewer questionnaire:
-[docs/reviewer-questionnaire.md](docs/reviewer-questionnaire.md).
+Feel free to leave feedback in the repo through issues, for now, survey will come soon.
 
 ## Evaluation And Checks
 
