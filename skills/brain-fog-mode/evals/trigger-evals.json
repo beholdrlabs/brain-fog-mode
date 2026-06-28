@@ -1,0 +1,91 @@
+[
+  {
+    "query": "brain fog mode please, this stack trace is too much",
+    "should_trigger": true
+  },
+  {
+    "query": "I keep losing track of this task, can you hold the state and give me one step at a time?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm mentally exhausted but need to prepare for tomorrow's meeting. Make this easy to follow.",
+    "should_trigger": true
+  },
+  {
+    "query": "too foggy to write this email, help me get a usable draft",
+    "should_trigger": true
+  },
+  {
+    "query": "Low-bandwidth mode. I need to compare these two vendors without spiraling.",
+    "should_trigger": true
+  },
+  {
+    "query": "I cannot focus today. Please do the repo inspection and keep the next step obvious.",
+    "should_trigger": true
+  },
+  {
+    "query": "My head is mush after being sick. Can you help me plan the report one step at a time?",
+    "should_trigger": true
+  },
+  {
+    "query": "I'm overwhelmed and have 8 admin tasks. Please pick the first thing and park the rest.",
+    "should_trigger": true
+  },
+  {
+    "query": "I got interrupted and forgot what we decided. Reconstruct the state for me.",
+    "should_trigger": true
+  },
+  {
+    "query": "Please hold the context while I fix this bug; I am too tired to track all the files.",
+    "should_trigger": true
+  },
+  {
+    "query": "Explain this function in simple language.",
+    "should_trigger": false
+  },
+  {
+    "query": "Give me a concise summary of this document.",
+    "should_trigger": false
+  },
+  {
+    "query": "This API is confusing. What does the endpoint return?",
+    "should_trigger": false
+  },
+  {
+    "query": "Create a step-by-step deployment guide for the team.",
+    "should_trigger": false
+  },
+  {
+    "query": "I disagree with your approach; use the existing service layer instead.",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you fix the typo in this paragraph?",
+    "should_trigger": false
+  },
+  {
+    "query": "This is a complex authentication bug. Investigate it thoroughly.",
+    "should_trigger": false
+  },
+  {
+    "query": "Summarize the pros and cons of PostgreSQL and MySQL.",
+    "should_trigger": false
+  },
+  {
+    "query": "Write a checklist for onboarding new engineers.",
+    "should_trigger": false
+  },
+  {
+    "query": "Can you make this tutorial beginner-friendly?",
+    "should_trigger": false
+  },
+  {
+    "query": "Give me the shortest possible answer.",
+    "should_trigger": false
+  },
+  {
+    "query": "What does this error mean: TypeError cannot read properties of undefined?",
+    "should_trigger": false
+  }
+]
+

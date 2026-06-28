@@ -1,0 +1,33 @@
+.DS_Store
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+
+# Node and package manager output
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Local LLM/security tool output
+.promptfoo/
+.promptfoo-cache/
+garak.log
+garak_runs/
+pyrit_memory.db
+skills-lock.json
+
+# Editor metadata
+.idea/
+.vscode/
+
+.beholdr

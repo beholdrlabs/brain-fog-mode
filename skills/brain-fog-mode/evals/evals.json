@@ -1,0 +1,123 @@
+{
+  "skill_name": "brain-fog-mode",
+  "evals": [
+    {
+      "id": "software-debugging",
+      "prompt": "My brain is not working today. The login refresh test keeps failing and I have lost track of what I already tried.",
+      "expected_output": "The agent activates Brain Fog Mode, reconstructs known state from available context, inspects relevant evidence, uses one testable hypothesis, avoids a broad authentication lecture, tracks failed attempts, and provides or performs one concrete next experiment.",
+      "assertions": [
+        "The response identifies one primary next experiment or action.",
+        "The response separates confirmed facts from assumptions or missing evidence.",
+        "The response does not present a broad generic authentication lecture before evidence inspection.",
+        "The response includes a place to track failed attempts or explicitly asks for the prior attempts if they are unavailable.",
+        "The response does not diagnose the user's condition."
+      ]
+    },
+    {
+      "id": "coding-implementation",
+      "prompt": "I need to add pagination but I am too foggy to think through all the pieces. Please hold the context for me.",
+      "expected_output": "The agent activates Brain Fog Mode, inspects repository conventions before modifying code, defines a small completion target, recommends or implements the smallest coherent slice, keeps API, UI, tests, and unknowns in task state, and avoids dumping the entire future implementation plan.",
+      "assertions": [
+        "The response defines a small implementation target.",
+        "The response indicates repository inspection before changes.",
+        "The response names one immediate coding action.",
+        "The response avoids a long unprioritized implementation backlog.",
+        "The response preserves unknowns or follow-up items."
+      ]
+    },
+    {
+      "id": "email-drafting",
+      "prompt": "I have to tell my manager the report will be late, but I cannot organize my thoughts.",
+      "expected_output": "The agent activates Brain Fog Mode, asks at most one blocking question if needed, uses known context where available, produces one usable clear and non-defensive draft, and does not produce five versions.",
+      "assertions": [
+        "The response contains one usable draft or a clear reason one blocking question is required first.",
+        "The response asks no more than one blocking question.",
+        "The draft is clear and non-defensive.",
+        "The response does not provide multiple near-identical versions.",
+        "The response does not offer to send the email without explicit authorization."
+      ]
+    },
+    {
+      "id": "meeting-preparation",
+      "prompt": "I have a project meeting in an hour and my head is foggy. Help me prepare.",
+      "expected_output": "The agent activates Brain Fog Mode, determines the meeting purpose from available context or asks one blocking question, creates a compact preparation note, identifies what the user needs to know, decide, and ask, and avoids an excessive generic checklist.",
+      "assertions": [
+        "The response produces a compact preparation note or asks one blocking question about meeting purpose.",
+        "The response includes know, decide, and ask sections or equivalent content.",
+        "The response recommends one immediate preparation action.",
+        "The response avoids a large generic meeting checklist."
+      ]
+    },
+    {
+      "id": "document-review",
+      "prompt": "This policy document is too much for me right now. I only need to know what I have to do next.",
+      "expected_output": "The agent activates Brain Fog Mode, focuses on obligations and next actions, cites or points to relevant sections when a document is available, distinguishes document content from interpretation, and avoids summarizing irrelevant sections.",
+      "assertions": [
+        "The response focuses on required actions rather than a full summary.",
+        "The response distinguishes document text from interpretation when evidence is available.",
+        "The response identifies one recommended next action.",
+        "The response asks for the document only if no document or context is available.",
+        "The response avoids summarizing unrelated sections."
+      ]
+    },
+    {
+      "id": "task-overload",
+      "prompt": "I have twelve things to do and I cannot decide where to start.",
+      "expected_output": "The agent activates Brain Fog Mode, gathers enough context to identify one priority, recommends one starting action, places other work into a compact later list, and avoids asking the user to rank all twelve tasks manually when context can resolve it.",
+      "assertions": [
+        "The response asks for the list or uses available context to identify the tasks.",
+        "The response recommends one starting action once enough context exists.",
+        "The response does not ask the user to rank all tasks manually as the first move.",
+        "The response keeps later items compact."
+      ]
+    },
+    {
+      "id": "interrupted-task",
+      "prompt": "Where were we? I cannot remember what we decided.",
+      "expected_output": "The agent activates or continues Brain Fog Mode, reconstructs the goal, lists confirmed decisions and completed work, mentions failed or abandoned paths, and gives one re-entry action.",
+      "assertions": [
+        "The response reconstructs the goal from conversation context when available.",
+        "The response lists decisions and completed work.",
+        "The response mentions failed or abandoned paths if present in context.",
+        "The response gives one re-entry action.",
+        "The response does not require the user to reconstruct the task manually."
+      ]
+    },
+    {
+      "id": "user-wants-to-stop",
+      "prompt": "I cannot do more today. Save where we are.",
+      "expected_output": "The agent stops introducing work, produces a restart checkpoint, clearly marks unverified work, gives no more than one optional re-entry action, and avoids pressure or guilt.",
+      "assertions": [
+        "The response produces a restart checkpoint or note.",
+        "The response marks unfinished or unverified work.",
+        "The response gives no more than one re-entry action.",
+        "The response does not pressure the user to continue.",
+        "The response does not introduce a new work plan beyond the restart note."
+      ]
+    },
+    {
+      "id": "mode-deactivation",
+      "prompt": "Disable brain fog mode. Give me the full technical explanation now.",
+      "expected_output": "The agent confirms deactivation briefly, preserves task state, returns to normal detail, and does not restart the investigation.",
+      "assertions": [
+        "The response confirms the interaction change briefly.",
+        "The response preserves or references the existing task state.",
+        "The response provides fuller technical detail.",
+        "The response does not restart from scratch without reason."
+      ]
+    },
+    {
+      "id": "domain-composition",
+      "prompt": "Use brain fog mode and the security review skill to review this API endpoint.",
+      "expected_output": "Brain Fog Mode controls cognitive load and interaction while the security skill controls domain methodology. Findings remain technically complete, neither skill silently overrides the other, and the user receives one clear primary direction.",
+      "assertions": [
+        "The response states or demonstrates that Brain Fog Mode modifies interaction while security review controls domain analysis.",
+        "The response keeps security findings technically complete.",
+        "The response gives one clear primary direction.",
+        "The response does not drop high-risk findings merely to stay brief.",
+        "The response asks for endpoint context only if unavailable."
+      ]
+    }
+  ]
+}
+
