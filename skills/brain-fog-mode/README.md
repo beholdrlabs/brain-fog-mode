@@ -1,8 +1,8 @@
 # Brain Fog Mode
 
-Brain Fog Mode is a beta Agent Skill for reducing cognitive load and preserving task continuity when a user has temporarily reduced mental bandwidth. It is designed for moments involving stress, fatigue, poor sleep, illness, medication effects, anxiety, cognitive overload, interruption, or similar circumstances.
+Brain Fog Mode is a beta Agent Skill for reducing cognitive load, simplifying decisions, and preserving task continuity when a user has temporarily reduced mental bandwidth. It is designed for moments involving multitasking, stress, fatigue, poor sleep, cognitive overload, interruption, brain fog, or similar circumstances.
 
-The skill changes collaboration style. It helps the agent externalize working memory, recommend one clear next action, preserve context, and do safe work directly when permitted.
+The skill changes collaboration style. It helps the agent externalize working memory, recommend one clear next action, preserve context, and do safe work directly when permitted. It is useful beyond coding and may also help ordinary decisions move faster by reducing unnecessary options and context switching.
 
 ## What It Is Not
 
@@ -60,9 +60,8 @@ These should activate the skill:
 
 - "Brain fog mode."
 - "Low-bandwidth mode."
-- "I cannot focus."
-- "I keep losing track."
-- "Walk me through this one step at a time."
+
+Explicit statements such as being overloaded, foggy, unable to focus, or losing track should also activate the skill.
 
 These should not activate the skill by themselves:
 

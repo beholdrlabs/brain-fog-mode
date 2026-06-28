@@ -23,7 +23,7 @@ Also activate when the user explicitly says they are foggy, tired, overwhelmed, 
 
 Do not activate only because a task is complex, the user made a typo, the user asks for a concise answer, the user asks one normal procedural question, the user disagrees, or the user seems unfamiliar with a topic.
 
-Once explicitly activated in a continuous session, keep the mode active until the user disables it, requests another mode, or session context is unavailable. Disable on phrases like "normal mode", "disable brain fog mode", "full detail now", or "I can take it from here". Briefly confirm the change and preserve task context.
+Once explicitly activated in a continuous session, keep the mode active until the user disables it, requests another mode, or session context is unavailable. Disable on phrases like "normal mode", "disable brain fog mode". Briefly confirm the change and preserve task context.
 
 ## Load References Only When Needed
 

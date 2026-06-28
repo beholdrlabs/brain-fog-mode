@@ -5,16 +5,22 @@
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-brain--fog--mode-7c3aed.svg)](skills/brain-fog-mode/)
 [![Feedback Welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg)](#reviewers-and-feedback)
 
-Brain Fog Mode is a beta Agent Skill that helps an AI assistant collaborate with less cognitive load
-when the user is tired, overwhelmed, interrupted, foggy, or short on working memory.
+**GitHub About:** An Agent Skill that helps AI assistants reduce cognitive load, simplify decisions,
+and keep one clear next step when users are multitasking, stressed, foggy, or overloaded. Works for
+coding and everyday tasks.
+
+Brain Fog Mode is a beta Agent Skill that helps AI assistants reduce cognitive load, simplify
+decisions, and keep one clear next step when users are multitasking, stressed, foggy, or overloaded.
+It works for coding and everyday tasks.
 
 It is an accessibility and work-continuity aid, not a medical tool. It does not diagnose, measure,
 treat, or explain symptoms.
 
 ## Why
 
-Normal AI answers can be correct but still hard to use when you have reduced bandwidth. They may give
-too many options, too much background, or a full roadmap when you only need the next step.
+AI tools can create huge productivity gains, but they can also create decision overload: too many
+options, too much background, and too many parallel paths. That gets harder when you are multitasking,
+stressed, foggy, or under high cognitive load.
 
 Brain Fog Mode changes the interaction shape:
 
@@ -24,7 +30,8 @@ Brain Fog Mode changes the interaction shape:
 - it asks at most one blocking question at a time
 - it creates checkpoints and restart notes when the user stops
 
-The user stays in control. The skill reduces avoidable working-memory and decision load.
+The goal is not only to help during brain fog. If the interaction makes decisions faster and reduces
+avoidable complexity, it can help anyone move through AI-assisted work with less friction.
 
 ## How
 
@@ -53,16 +60,13 @@ Activate it simply:
 
 - "brain fog mode"
 - "low-bandwidth mode"
-- "I cannot focus"
-- "I keep losing track"
-- "walk me through it one step at a time"
+
+The skill can also activate when the user explicitly says they are overloaded, foggy, or losing track.
 
 Disable it with:
 
 - "normal mode"
 - "disable brain fog mode"
-- "full detail now"
-- "I can take it from here"
 
 It should not activate only because a task is complex, the user made a typo, or the user asked for a
 concise answer.
