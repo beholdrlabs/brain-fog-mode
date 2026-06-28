@@ -31,7 +31,7 @@ The user stays in control. The skill reduces avoidable working-memory and decisi
 Install from a GitHub repository:
 
 ```bash
-npx skills add <owner>/<repo>
+npx skills add beholdrlabs/brain-fog-mode
 ```
 
 The CLI lists skills found in the repository; choose `brain-fog-mode`.
