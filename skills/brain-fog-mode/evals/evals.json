@@ -117,7 +117,80 @@
         "The response does not drop high-risk findings merely to stay brief.",
         "The response asks for endpoint context only if unavailable."
       ]
+    },
+    {
+      "id": "scoped-decision-no-latch",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Help me decide: do we ship the redesign this sprint or push it to next?"
+        },
+        {
+          "role": "user",
+          "content": "Write the release notes for last week's patch."
+        }
+      ],
+      "expected_output": "The agent gives one recommendation with a short reason and one immediate next action for the decision, without announcing a mode or adding checkpoint structure. On the following unrelated request it responds normally, with no task-state block, no checkpoint, and no low-bandwidth framing carried over.",
+      "assertions": [
+        "The first response commits to one recommendation rather than returning the choice.",
+        "The first response does not announce that a mode has been activated.",
+        "The first response does not include checkpoint, restart-note, or task-state scaffolding.",
+        "The second response shows no carried-over Brain Fog Mode structure.",
+        "The agent does not ask the user to disable a mode that was never announced."
+      ]
+    },
+    {
+      "id": "simplify-mode-no-latch",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Our deployment process provisions a parallel green environment, runs backward-compatible database migrations before traffic moves, warms caches, shifts traffic at 10%, 50%, and 100% while watching error rate and latency, and retains blue for rollback. Traffic rollback does not undo schema changes, so destructive migrations require a later cleanup release. This is very complex. Please simplify it and tell me what matters now."
+        },
+        {
+          "role": "user",
+          "content": "Now give me the complete deployment checklist."
+        }
+      ],
+      "expected_output": "The first response simplifies the material without losing the immediate outcome, constraints, or critical caveats, and gives one clear next action without announcing a mode or adding checkpoint structure. The second response provides the requested complete checklist normally, with no simplify-mode framing carried over.",
+      "assertions": [
+        "The first response uses plain language and removes detail that does not affect the immediate outcome.",
+        "The first response preserves critical safety or correctness caveats.",
+        "The first response names one immediate next action.",
+        "The first response does not announce a mode or include checkpoint scaffolding.",
+        "The second response provides full requested detail with no carried-over simplify-mode restriction."
+      ]
+    },
+    {
+      "id": "option-map-request-respected",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Brain fog mode."
+        },
+        {
+          "role": "user",
+          "content": "Give me the pros and cons of moving our queue from SQS to Kafka. We process about 20 million jobs per day, need replay for incident recovery, and currently have a small operations team."
+        }
+      ],
+      "expected_output": "With session mode already active, the agent answers the question that was asked and presents the tradeoffs on both sides. It does not collapse the answer into a single recommendation because the user asked for the landscape rather than a decision. It may ask whether the user wants its recommendation.",
+      "assertions": [
+        "The response presents tradeoffs on both sides rather than one recommendation only.",
+        "The response does not refuse or narrow the request on the grounds of reducing load.",
+        "Any recommendation is offered as an option the user can request, not substituted for the requested comparison.",
+        "The response does not add checkpoint or task-state scaffolding."
+      ]
+    },
+    {
+      "id": "decision-under-expertise-gap",
+      "prompt": "I'm not technical. My engineer wants to approve a two-week migration to a new hosting provider. Help me decide.",
+      "expected_output": "The agent gives one recommendation and explains the decision in terms of commitment, cost, reversibility, and what gets harder later, in plain language. It names which part genuinely needs engineering judgment and does not imply the user has now verified the technical claim.",
+      "assertions": [
+        "The response explains consequences rather than implementation mechanics.",
+        "The response covers at least reversibility and ongoing cost.",
+        "The response names which part of the decision needs engineering judgment.",
+        "The response does not imply the user is now able to verify the engineer's estimate.",
+        "The response avoids unexplained technical jargon."
+      ]
     }
   ]
 }
-

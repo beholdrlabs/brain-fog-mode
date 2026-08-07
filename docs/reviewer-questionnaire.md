@@ -1,20 +1,25 @@
 # Reviewer Questionnaire
 
-Two short forms. **Form A** is for people who tried Brain Fog Mode on a real task. **Form B** is for
-volunteer clinicians (doctors, psychologists) doing the human safety review (Track B).
+Two review paths. **Form A** is for people who tried Brain Fog Mode on a real task. Its public,
+low-effort version lives in `.github/DISCUSSION_TEMPLATE/feedback.yml`. **Form B** is for volunteer
+clinicians (doctors, psychologists) doing the human safety review (Track B) and should be returned
+privately.
 
 Keep it low-effort on purpose: this skill is for people with reduced cognitive bandwidth, so the
 review itself should not demand much. Skip any question that does not apply. Free-text is optional.
 
-Copy the relevant form, fill it in, and return it.
+Do not put sensitive health or work information in a GitHub Discussion. For private user feedback or
+Form B, agree on a private return channel with the maintainer before sharing the completed form.
 
 ---
 
 ## Form A — User reviewer (~3 minutes)
 
+Use the repository's **Feedback** GitHub Discussion form for public submissions. The questions below
+are the extended source questionnaire and can also be copied into an agreed private channel.
+
 **Disclaimer:** Brain Fog Mode is a cognitive-accessibility aid, not a medical tool. Do not share
-health details you would rather keep private. Your feedback is not treated as medical information,
-and public submissions are visible to anyone.
+health details you would rather keep private. Public submissions are visible to anyone.
 
 **0. Setup (helps us compare results — one line)**
 - Tool used: ☐ Claude Code ☐ claude.ai ☐ Codex CLI ☐ other: `____`

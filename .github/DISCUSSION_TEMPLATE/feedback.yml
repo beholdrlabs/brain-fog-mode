@@ -1,0 +1,161 @@
+title: "[Feedback] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for trying Brain Fog Mode. This short form is for feedback from a real task and should take about three minutes.
+
+        **This discussion will be public.** Do not include medical history, diagnoses, private work information, or anything else you do not want published. For private or clinician feedback, use the reviewer questionnaire in `docs/reviewer-questionnaire.md` and arrange a private return with the maintainer.
+
+  - type: input
+    id: setup
+    attributes:
+      label: Setup
+      description: Tool, model, and skill version or commit, if known.
+      placeholder: "Example: Codex CLI, model name, 0.2.1-beta"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: prior-use
+    attributes:
+      label: Previous use
+      description: How many times had you used Brain Fog Mode before this task?
+      options:
+        - First time
+        - 2–5 times
+        - More than 5 times
+    validations:
+      required: true
+
+  - type: textarea
+    id: task
+    attributes:
+      label: Task
+      description: What were you trying to accomplish? Keep private or identifying details out.
+      placeholder: "Example: Debug a failing login-refresh test after losing track of earlier attempts."
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        Rate the interaction from **1 (not at all)** to **5 (very much)**. Compare it with your normal assistant experience if you can.
+
+  - type: dropdown
+    id: easier-to-understand
+    attributes:
+      label: The explanation was easier to understand
+      options:
+        - 1 — Not at all
+        - "2"
+        - "3"
+        - "4"
+        - 5 — Very much
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priorities-clear
+    attributes:
+      label: I could tell what mattered most
+      options:
+        - 1 — Not at all
+        - "2"
+        - "3"
+        - "4"
+        - 5 — Very much
+    validations:
+      required: true
+
+  - type: dropdown
+    id: next-action-clear
+    attributes:
+      label: The next action was clear
+      options:
+        - 1 — Not at all
+        - "2"
+        - "3"
+        - "4"
+        - 5 — Very much
+    validations:
+      required: true
+
+  - type: dropdown
+    id: too-many-decisions
+    attributes:
+      label: I still had to make too many decisions
+      description: This item is intentionally reversed; a high score indicates a problem.
+      options:
+        - 1 — Not at all
+        - "2"
+        - "3"
+        - "4"
+        - 5 — Very much
+    validations:
+      required: true
+
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: Task outcome
+      options:
+        - Finished the task
+        - Made partial progress
+        - Stalled or gave up
+    validations:
+      required: true
+
+  - type: textarea
+    id: helped
+    attributes:
+      label: What helped most?
+      description: Optional. One short example is enough.
+    validations:
+      required: false
+
+  - type: textarea
+    id: added-load
+    attributes:
+      label: What added load or caused confusion?
+      description: Optional. One short example is enough.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: medical-framing
+    attributes:
+      label: Did anything read like medical advice or a diagnosis?
+      options:
+        - "No"
+        - "Yes"
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: medical-details
+    attributes:
+      label: Medical-framing details
+      description: If you answered Yes or Unsure, what wording concerned you? Do not include personal health information.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: use-again
+    attributes:
+      label: Would you use Brain Fog Mode again?
+      options:
+        - "Yes"
+        - "No"
+        - Maybe
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: public-confirmation
+    attributes:
+      label: Public submission
+      options:
+        - label: I understand that this discussion and its answers will be public, and I have removed sensitive information.
+          required: true

@@ -1,43 +1,93 @@
 [
   {
     "query": "brain fog mode please, this stack trace is too much",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "I keep losing track of this task, can you hold the state and give me one step at a time?",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "I'm mentally exhausted but need to prepare for tomorrow's meeting. Make this easy to follow.",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "too foggy to write this email, help me get a usable draft",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "Low-bandwidth mode. I need to compare these two vendors without spiraling.",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "I cannot focus today. Please do the repo inspection and keep the next step obvious.",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "My head is mush after being sick. Can you help me plan the report one step at a time?",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "I'm overwhelmed and have 8 admin tasks. Please pick the first thing and park the rest.",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "I got interrupted and forgot what we decided. Reconstruct the state for me.",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "Please hold the context while I fix this bug; I am too tired to track all the files.",
-    "should_trigger": true
+    "should_trigger": true,
+    "level": "session"
+  },
+  {
+    "query": "Help me decide between these two job offers.",
+    "should_trigger": true,
+    "level": "scoped"
+  },
+  {
+    "query": "We shortlisted three vendors. Which one should I pick?",
+    "should_trigger": true,
+    "level": "scoped"
+  },
+  {
+    "query": "What would you go with here, Postgres or DynamoDB?",
+    "should_trigger": true,
+    "level": "scoped"
+  },
+  {
+    "query": "Help me decide already, I can't think straight today.",
+    "should_trigger": true,
+    "level": "session"
+  },
+  {
+    "query": "This architecture explanation is very complex. Please simplify it.",
+    "should_trigger": true,
+    "level": "simplify"
+  },
+  {
+    "query": "This is too much detail; make it easier to follow.",
+    "should_trigger": true,
+    "level": "simplify"
+  },
+  {
+    "query": "This architecture explanation is overwhelming; simplify it for me.",
+    "should_trigger": true,
+    "level": "simplify"
+  },
+  {
+    "query": "Brain fog mode. This deployment explanation is too complex; simplify it.",
+    "should_trigger": true,
+    "level": "session"
   },
   {
     "query": "Explain this function in simple language.",
@@ -86,6 +136,21 @@
   {
     "query": "What does this error mean: TypeError cannot read properties of undefined?",
     "should_trigger": false
+  },
+  {
+    "query": "List every auth provider option we could use.",
+    "should_trigger": false
+  },
+  {
+    "query": "Compare these two API designs for me.",
+    "should_trigger": false
+  },
+  {
+    "query": "This project is complex.",
+    "should_trigger": false
+  },
+  {
+    "query": "Simplify 6/8.",
+    "should_trigger": false
   }
 ]
-

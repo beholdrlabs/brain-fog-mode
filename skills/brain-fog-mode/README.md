@@ -1,6 +1,6 @@
 # Brain Fog Mode
 
-Brain Fog Mode is a beta Agent Skill for reducing cognitive load, simplifying decisions, and preserving task continuity when a user has temporarily reduced mental bandwidth. It is designed for moments involving multitasking, stress, fatigue, poor sleep, cognitive overload, interruption, brain fog, or similar circumstances.
+Brain Fog Mode is a beta Agent Skill for reducing cognitive load, simplifying complex material and decisions, and preserving task continuity when a user has temporarily reduced mental bandwidth. It is designed for moments involving multitasking, stress, fatigue, poor sleep, cognitive overload, interruption, brain fog, or similar circumstances.
 
 The skill changes collaboration style. It helps the agent externalize working memory, recommend one clear next action, preserve context, and do safe work directly when permitted. It is useful beyond coding and may also help ordinary decisions move faster by reducing unnecessary options and context switching.
 
@@ -56,19 +56,37 @@ Consult your agent client's documentation for exact installation paths and skill
 
 ## Activation Examples
 
-These should activate the skill:
+The skill has three activation levels.
+
+**Session mode** stays on until disabled:
 
 - "Brain fog mode."
 - "Low-bandwidth mode."
 
-Explicit statements such as being overloaded, foggy, unable to focus, or losing track should also activate the skill.
+Explicit statements such as being overloaded, foggy, unable to focus, or losing track should also activate session mode.
 
-These should not activate the skill by themselves:
+**Simplify mode** applies to one answer and then stops, with no mode announcement and no checkpoint scaffolding:
+
+- "This is very complex. Please simplify it."
+- "This is too much detail; make it easier to follow."
+
+**Scoped decision support** applies to one answer and then stops, with no mode announcement and no checkpoint scaffolding:
+
+- "Help me decide between these two offers."
+- "Which of these should I pick?"
+- "What would you go with?"
+
+These should not activate any level by themselves:
 
 - "Give me a concise summary."
 - "Explain this function in simple language."
 - "Create a step-by-step deployment guide."
 - "This API is confusing. What does it return?"
+- "This is a complex authentication bug. Investigate it thoroughly."
+- "Give me the pros and cons of X and Y."
+- "Compare these two designs."
+
+Complexity alone does not activate simplify mode; the user must also ask for simplification. Likewise, a request for the option map is not a request for a decision. Answer the comparison without recommending one unless the user asks for the call.
 
 ## Deactivation Examples
 
@@ -132,14 +150,14 @@ These sources do not make Brain Fog Mode clinically validated. The skill uses th
 
 The `evals/` directory contains:
 
-- `evals.json`: functional scenarios for software debugging, implementation, email, meetings, document review, overload, interruption recovery, stopping, deactivation, and domain-skill composition.
+- `evals.json`: functional scenarios for software debugging, implementation, simplification, email, meetings, document review, overload, interruption recovery, stopping, deactivation, and domain-skill composition.
 - `trigger-evals.json`: positive and negative near-miss prompts for activation accuracy.
 - `safety-evals.json`: health-boundary and safety-behavior scenarios.
 
 Manual eval flow:
 
 1. Pick a case from `evals/`.
-2. Run the prompt once without the skill and once with the skill active.
+2. Run a single `prompt` once, or deliver each entry in `turns` as a separate conversational turn, without the skill and with the skill available for automatic activation.
 3. Compare outputs against the assertions.
 4. Record accuracy, source faithfulness, response shape, token usage, and human notes.
 

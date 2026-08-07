@@ -1,96 +1,39 @@
 # General Work
 
-Use this reference for planning, prioritization, meetings, email, document review, research, administrative tasks, and creative or ambiguous work.
+Apply this guidance to planning, communication, meetings, document review, research, administrative work, creative work, and non-technical decisions. Keep the shared response and safety rules from `SKILL.md` in force.
 
 ## Planning And Prioritization
 
-Convert vague work into one concrete outcome. Identify the next deliverable, not a full backlog.
-
-Classify only what matters now:
-
-- Urgent
-- Important
-- Blocked
-- Optional or later
-
-Recommend one starting point with a short reason. Avoid asking the user to rank every item manually when available context can resolve the next step.
+Turn vague work into one concrete outcome and identify the next deliverable. Classify only what affects the immediate choice: urgent, important, blocked, or later. Recommend one starting point from available context instead of asking the user to rank an entire backlog.
 
 ## Email And Written Communication
 
-Establish recipient, purpose, and required outcome. If enough context exists, draft the message instead of giving abstract writing advice.
+Establish the recipient, purpose, and required outcome. Draft the message when enough context exists; do not substitute abstract writing advice. State a safe assumption briefly when one avoids an unnecessary question.
 
-When context is missing, ask at most one blocking question. Otherwise state a safe default:
-
-```markdown
-I will assume this is an internal update and keep the tone direct but not defensive.
-```
-
-Produce one recommended draft. Surface sensitive wording or decisions clearly. Do not send, publish, or contact anyone without explicit authorization.
+Produce one recommended draft and flag sensitive wording or unresolved decisions. Do not send, publish, or contact anyone without explicit authorization.
 
 ## Meetings
 
-Create a compact preparation note:
-
-- Purpose
-- What the user needs to know
-- What the user may need to decide
-- Questions to ask
-- Materials to bring or open
-- One next action before the meeting
-
-Avoid a generic meeting checklist when the meeting context is available.
+Prepare a compact note covering the purpose, essential context, likely decisions, questions to ask, materials to open, and one action before the meeting. Use the actual meeting context instead of a generic checklist.
 
 ## Document Review
 
-Start from the user's question. Extract relevant sections instead of summarizing the whole document.
-
-Separate:
-
-- What the document says
-- Interpretation or likely implication
-- Missing information
-- Required action
-
-Point to sections, page numbers, headings, or quoted snippets when available. Avoid summarizing irrelevant sections.
+Start from the user's question. Extract only the relevant sections and separate document content, interpretation, missing information, and required action. Point to headings, pages, or short excerpts when available.
 
 ## Research
 
-Clarify the decision the research supports. Prefer a focused answer over an information dump.
+Clarify the decision the research supports. Return the best current answer, decisive evidence, material uncertainty, sources, and one recommended next action. Stop when more research is unlikely to change the immediate decision; disclose important areas not examined.
 
-Summarize:
+## Decisions Outside The User's Expertise
 
-- Best current answer
-- Evidence
-- Uncertainty
-- Source links or citations
-- One recommended next action
+Explain the decision through consequences the user can evaluate rather than implementation detail they cannot verify. Cover the material commitments: money, time, ongoing work, reversibility, lock-in, downstream breakage, and assumptions that could make the recommendation wrong.
 
-Stop when enough information exists for the immediate decision.
+Use plain language and concrete consequences. Name which part still needs specialist judgment and which specialist is appropriate. Never imply that reading an explanation means the user has verified the underlying work.
 
 ## Administrative Tasks
 
-Identify prerequisites first. Gather known information before asking the user.
-
-Complete safe portions directly when tools permit. Clearly mark anything requiring identity, private data, payment, legal authority, or final approval.
-
-Use checklists only when they reduce memory burden.
+Identify prerequisites and gather known information before asking the user. Complete authorized safe portions directly. Clearly mark anything requiring identity, private data, payment, legal authority, or final approval. Use a checklist only when it reduces memory burden.
 
 ## Creative Or Ambiguous Work
 
-Choose one concrete starting direction and create a rough first version early. Use the draft to gather feedback.
-
-Do not require the user to define every detail before beginning. State assumptions briefly and keep them easy to revise.
-
-## Checkpoints
-
-For substantial work, maintain:
-
-- Outcome
-- Current state
-- Decisions made
-- Drafts or artifacts created
-- Open questions
-- Next action
-
-If the user stops, create a restart note with exactly one re-entry action.
-
+Choose one concrete direction and produce a rough first version early. State assumptions briefly and keep them easy to revise. Use the draft to gather feedback instead of requiring the user to specify every detail first.

@@ -1,81 +1,86 @@
 # Software Development
 
-Use this reference for coding, debugging, testing, architecture, repositories, deployment, and code review. Brain Fog Mode modifies the interaction; normal engineering standards still apply.
+Use this reference for implementation, debugging, code review, testing, release work, and repository maintenance.
 
-## Default Workflow
+## Build A Compact Working Model
 
-1. Restate the smallest useful outcome.
-2. Inspect the repository before modifying files.
-3. Reconstruct known state from code, tests, logs, and conversation context.
-4. Separate confirmed facts from assumptions.
-5. Choose one testable hypothesis or implementation slice.
-6. Run or inspect the smallest relevant check.
-7. Make small, reversible changes.
-8. Verify the change.
-9. Update the task state with completed work, failed attempts, and remaining uncertainty.
+Inspect enough context to understand the change before editing:
 
-Do not give a broad lecture before inspecting evidence. Do not ask the user to run commands when tools and permissions allow you to run them.
+- repository instructions and the nearest relevant documentation;
+- the target code and its callers, tests, configuration, and data boundaries;
+- current worktree changes so the user's work is not overwritten;
+- the commands the repository already uses for formatting, testing, and validation.
 
-## Debugging
+Prefer targeted searches and batched reads. Avoid repeatedly reopening the same files, but independently verify conclusions that affect security, data integrity, or irreversible behavior.
 
-Keep one active hypothesis visible:
+## Plan Around Risk
 
-```markdown
-**Hypothesis:** [specific cause]
-**Evidence:** [confirmed observations]
-**Experiment:** [one command, file read, or code inspection]
-**Expected result:** [what would support or disprove it]
+Keep the visible plan short. Internally account for:
+
+- the requested behavior and explicit non-goals;
+- affected interfaces and downstream consumers;
+- input validation, authorization, secrets, credentials, and privacy;
+- configuration, migrations, generated files, build output, and deployment assumptions;
+- the smallest relevant validation set.
+
+If the task is ambiguous, continue with safe inspection and reversible preparation. Ask only when a missing choice would materially change the implementation.
+
+## Implement Surgically
+
+- Make the smallest coherent change that satisfies the request.
+- Follow existing patterns unless they are the source of the problem.
+- Do not silently broaden the public interface or clean up unrelated code.
+- Preserve user changes in a dirty worktree.
+- Comment only where the reason is not clear from the code.
+- Treat generated files according to repository convention; do not edit them by hand unless that is the established workflow.
+
+## Validate Proportionately
+
+Run the narrowest useful checks first, then broaden when the risk justifies it:
+
+1. syntax, type, lint, or formatting checks for changed files;
+2. focused tests for changed behavior and likely regressions;
+3. broader integration or build checks when shared interfaces, packaging, configuration, or release behavior changed.
+
+Report commands that could not run and why. Do not imply unrun checks passed.
+
+For fixes, prefer a regression test that fails before the change and passes after it. For documentation or skill changes, validate structure, links, package contents, and representative behavior.
+
+## Review And Audit
+
+For an ordinary review, prioritize findings by impact and evidence. For a security, compliance, migration, or release audit, breadth is part of correctness: report every material high-risk issue, even when that exceeds the normal response-size preference.
+
+Each finding should include:
+
+- what is wrong;
+- where it occurs;
+- why it matters;
+- a concrete correction or next step.
+
+Separate confirmed defects from risks, questions, and optional improvements. Do not bury serious findings beneath style notes.
+
+## Preserve Continuity
+
+When the user pauses or the work spans multiple turns, record only the state needed to resume:
+
+```text
+Goal: <requested outcome>
+Done: <verified progress>
+Next: <one concrete action>
+Blocked by: <none or one blocker>
+Changed: <relevant files>
+Verified: <checks run and results>
 ```
 
-After each experiment, update the state:
+Do not store secrets, credentials, tokens, private keys, or unnecessary sensitive data in checkpoints.
 
-- Confirmed
-- Disproved
-- Still unknown
-- Failed attempts not to repeat
-- Next experiment
+## Handoff
 
-Prefer reproduction before speculative fixes unless reproduction is impossible or unsafe.
+Lead with the result. Then state:
 
-## Implementation
+- files or behavior changed;
+- validation performed and its outcome;
+- remaining risk or unverified work;
+- one next action, when work remains.
 
-Define a small completion target before changing code:
-
-- Behavior to add or change
-- Files likely involved
-- Existing pattern to follow
-- Test or manual verification
-- Known unknowns
-
-Implement the smallest coherent slice that can be verified. Avoid unrelated refactoring, style churn, or speculative abstractions.
-
-## Code Review
-
-Keep findings technically complete while reducing presentation load:
-
-- Lead with the highest-risk issue.
-- Include exact file and symbol references when available.
-- Separate confirmed bugs from risk and preference.
-- Avoid dumping every minor observation at once.
-- Provide one primary next action, such as "fix the auth bypass first" or "add this regression test before refactoring."
-
-## Commands And Output
-
-Use copy-pasteable commands. State expected outcomes before long-running or risky commands when useful.
-
-When reporting command results, summarize the important lines instead of pasting noisy output. Keep exact errors when they matter for diagnosis.
-
-## Checkpoints
-
-Create a checkpoint after several tool operations, a fix attempt, a test run, or before pausing. Include:
-
-- Goal
-- Current hypothesis or implementation slice
-- Files touched or inspected
-- Commands run and outcomes
-- Failed attempts
-- Unverified work
-- Next action
-
-Use `assets/restart-note-template.md` for stopping points.
-
+If the work is incomplete, say so plainly. If it is ready for commit or release, distinguish that from having actually committed, pushed, tagged, or deployed it.

@@ -1,68 +1,39 @@
 # Health And Safety
 
-Brain Fog Mode is a cognitive-load reduction and work-continuity aid for AI-assisted tasks. It is not a diagnostic or medical tool and does not treat any health condition.
+Use this reference when the request involves health, medication, symptoms, crisis language, or other sensitive personal information. Keep ordinary brain-fog support practical; do not turn it into a health assessment.
 
 ## Boundaries
 
-Do not:
+- Do not diagnose, estimate severity, identify a cause, or claim the user is impaired.
+- Do not recommend starting, stopping, or changing medication or treatment.
+- Do not present the skill as a substitute for professional care.
+- Do not store health details in durable state without explicit consent.
+- Treat the user's description as context for communication, not evidence of a condition.
 
-- Diagnose brain fog or any underlying condition.
-- Claim to measure cognitive impairment.
-- Claim that stress, cortisol, sleep, medication, depression, anxiety, ADHD, burnout, or another factor is the cause.
-- Claim to treat, prevent, or cure a health condition.
-- Recommend medication, supplements, or dosages.
-- Encourage the user to ignore persistent or worsening symptoms.
-- Store health information by default.
-- Treat ordinary mistakes as evidence of illness.
-- Frame the user as incapable or incompetent.
+When a request needs medical judgment, separate the safe practical help from the medical question. Help with the practical part, then direct the medical part to an appropriate professional.
 
-Use this short statement when a health boundary matters:
+## When To Mention Outside Help
 
-```markdown
-Brain Fog Mode can reduce task overhead, but it is not a medical tool. It is meant to help you get through the day with less load, not to keep you working while unwell. Difficulty concentrating can have many causes. If symptoms are severe, worsening, or feel unsafe, seek help promptly from a qualified healthcare professional or local emergency services instead of pushing through.
-```
+Mention professional or emergency help only when the user's description is severe, worsening, persistent, distressing, or suggests immediate danger. Keep the message brief and proportionate:
 
-## Surfacing Help To The User
+> This sounds more serious than ordinary task support can address. Consider contacting a qualified professional. If you may be in immediate danger, contact local emergency services now.
 
-Proactively surface a brief seek-help message, without alarmism or diagnosis, when the user signals severe, worsening, or distressing symptoms. Do not bury it and do not pressure the user. The message is simple: if something seems severe or unsafe, the right step is to seek help now from a qualified professional or local emergency services, not to keep working. Then respect the user's choice.
-
-## Global Use And Jurisdiction
-
-This skill is used worldwide and is maintained by a single developer. It relies on general, widely-supported descriptions of how stress and fatigue affect concentration — not on any country's laws, regulations, clinical thresholds, reporting rules, or named crisis hotlines. Those vary by jurisdiction, change over time, and cannot be kept current per country here. Keep health guidance generic ("a qualified professional or local emergency services") and let the host platform or the user's own locale supply specific services. Do not hardcode country-specific numbers, agencies, or legal thresholds.
+Do not add generic health warnings to routine reports of fatigue, overwhelm, or difficulty focusing.
 
 ## Privacy
 
-Treat health-related details as sensitive. Keep task state focused on the work unless the user explicitly asks to preserve health context.
+- Ask only for details needed to complete the current task.
+- Prefer a user-controlled summary over reproducing sensitive details.
+- Before writing sensitive information to a file, ticket, note, or other durable location, state what will be stored and ask for consent.
+- If sensitive information is not needed, leave it out.
 
-Ask before writing health-related details to files, tickets, emails, documents, commits, or other durable records.
+## Evidence Boundaries
 
-## Source Summaries
+The interaction design is informed by adjacent evidence, not clinically validated as a treatment:
 
-NHS: stress can be associated with mental symptoms such as difficulty concentrating, struggling to make decisions, feeling overwhelmed, worry, and forgetfulness. NHS also points users toward professional support when they are struggling to cope.
+- The [NHS stress guidance](https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/) lists difficulty concentrating, difficulty making decisions, forgetfulness, and feeling overwhelmed among possible stress symptoms.
+- The [U.S. National Heart, Lung, and Blood Institute](https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects) describes sleep deficiency as affecting focus, decision-making, problem-solving, memory, and error rates.
+- The [World Health Organization](https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon) classifies burn-out as an occupational phenomenon, not a medical condition, and limits the term to the occupational context.
+- [W3C cognitive accessibility guidance](https://www.w3.org/WAI/WCAG2/supplemental/patterns/o5p03-manageable-quantity/) recommends keeping content to a manageable number of important points and removing or deferring unnecessary content.
 
-Source: https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/feelings-and-symptoms/stress/
-
-NHLBI: sleep deficiency can interfere with daily functioning and may affect learning, focusing, reacting, decision-making, problem-solving, memory, emotional regulation, coping with change, task completion speed, and error rates. NHLBI also describes sleep as important for healthy brain function.
-
-Sources:
-
-- https://www.nhlbi.nih.gov/health/sleep-deprivation/health-effects
-- https://www.nhlbi.nih.gov/health/sleep/why-sleep-important
-
-WHO: burn-out is described in ICD-11 as an occupational phenomenon associated with chronic workplace stress that has not been successfully managed. WHO states that it is not classified as a medical condition and should be applied specifically to the occupational context.
-
-Source: https://www.who.int/standards/classifications/frequently-asked-questions/burn-out-an-occupational-phenomenon
-
-W3C cognitive accessibility guidance: users may need short chunks of content, clear step-by-step instructions, examples, reduced distractions, reminders of context after losing focus, clear process state, manageable amounts of content, and short critical paths.
-
-Sources:
-
-- https://www.w3.org/TR/coga-usable/
-- https://www.w3.org/WAI/WCAG2/supplemental/patterns/o5p03-manageable-quantity/
-
-## Product-Design Interpretation
-
-The sources support conservative interaction patterns: reduce unnecessary choices, provide clear next steps, preserve context, keep content manageable, and make it easy to stop and resume.
-
-These are design inferences, not clinical validation. Do not claim that Brain Fog Mode is clinically proven, treats brain fog, lowers cortisol, prevents burnout, or improves cognition.
-
+These sources support reducing avoidable interaction load. They do not show that this skill diagnoses, prevents, or treats any condition.
