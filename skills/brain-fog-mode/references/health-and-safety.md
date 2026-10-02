@@ -10,7 +10,11 @@ Use this reference when the request involves health, medication, symptoms, crisi
 - Do not store health details in durable state without explicit consent.
 - Treat the user's description as context for communication, not evidence of a condition.
 
-When a request needs medical judgment, separate the safe practical help from the medical question. Help with the practical part, then direct the medical part to an appropriate professional.
+When a request needs medical judgment, separate the safe practical help from the medical question. Help with the practical part, then direct the medical part to an appropriate professional. Offer
+one concrete task you can help with, for example: "I can turn your concerns into a short question
+list for a clinician." Keep the redirect brief; do not replace it with a diagnosis comparison or
+remedy list. When asked for a cure or clinical benefit, state explicitly that this mode
+changes communication and task organization; it does not treat symptoms.
 
 ## When To Mention Outside Help
 

@@ -1,167 +1,112 @@
 # Brain Fog Mode
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.1--beta-orange.svg)](skills/brain-fog-mode/SKILL.md)
+[![Version](https://img.shields.io/badge/version-0.3.0--beta-orange.svg)](skills/brain-fog-mode/SKILL.md)
 [![Agent Skill](https://img.shields.io/badge/Agent%20Skill-brain--fog--mode-7c3aed.svg)](skills/brain-fog-mode/)
 [![Feedback Welcome](https://img.shields.io/badge/feedback-welcome-brightgreen.svg)](#reviewers-and-feedback)
 
-Brain Fog Mode is a beta Agent Skill that helps AI assistants reduce cognitive load, simplify complex
-material and decisions, and keep one clear next step when users are multitasking, stressed, foggy, or overloaded.
-It works for coding and everyday tasks.
+![Brain Fog Mode: one clear next step, with the context kept for you. Fewer decisions, clearer questions, easier review, and keeping your place.](og-image.png)
 
-It is an accessibility and work-continuity aid, not a medical tool. It does not diagnose, measure,
-treat, or explain symptoms.
+**One clear next step, with the context kept for you.**
 
-## Why
+An Agent Skill that helps your AI assistant simplify decisions, surface risks, and keep track of unfinished work. For coding and everyday tasks.
 
-AI tools can move work fast, but they also create decision overload: too many options, too much
-background, and too many parallel paths. They create a second problem too — output arrives faster than
-a human can check it, and confidence in AI-assisted work tends to rise faster than understanding of it.
-Both get harder when you are multitasking, stressed, foggy, or under high cognitive load.
+I started building it when I was overloaded. You don’t need brain fog to use it. 😅
 
-Brain Fog Mode changes the interaction shape:
+**Beta.** An accessibility and work-continuity aid; no diagnosis or treatment claims.
 
-- it keeps the goal and task state visible
-- it separates confirmed facts from assumptions
-- it recommends one clear next action
-- it asks at most one blocking question at a time
-- it creates checkpoints and restart notes when the user stops
-
-The goal is not only to help during brain fog. If the interaction makes decisions faster and reduces
-avoidable complexity, it can help anyone move through AI-assisted work with less friction.
-
-## How
-
-Install from a GitHub repository:
+## Try It
 
 ```bash
 npx skills add beholdrlabs/brain-fog-mode
 ```
 
-The CLI lists skills found in the repository; choose `brain-fog-mode`.
+Choose `brain-fog-mode`, then tell your assistant:
 
-Install from a local checkout:
+> Brain fog mode. Help me with [your task].
 
-```bash
-npx skills add .
-```
+Say **“normal mode”** to turn it off. From a local checkout, install with `npx skills add .`.
 
-Inspect a local checkout without installing:
+## What Changes
 
-```bash
-npx skills add . --list
-npx skills use . --skill brain-fog-mode
-```
+- **Fewer decisions:** one recommendation, the fact that could change it, and “not sure” as a valid answer.
+- **Clearer questions:** likely goals to choose from when the task is unclear; one blocking question at a time.
+- **Easier review:** the result first, every high-risk issue, and what remains unverified.
+- **Keep your place:** task context stays visible; a restart note tells you where to resume and where it is saved.
 
-Activate it simply:
+The agent handles small, reversible choices within scope and asks before consequential actions.
 
-- "brain fog mode"
-- "low-bandwidth mode"
+## Without And With The Skill
 
-The skill can also activate when the user explicitly says they are overloaded, foggy, or losing track.
-Named activation and explicit reduced-bandwidth statements turn on session mode, which stays active
-until you disable it. Disable it with:
+**Same task, two fresh-context agents.** The control loaded no skills; the other agent loaded this skill with Brain Fog Mode active. These are recorded responses from a small experiment.
 
-- "normal mode"
-- "disable brain fog mode"
+> Help me study systems engineering, AWS platform focused. I don't know where to begin.
 
-There is also a lighter level. Asking the agent to make a call for you — "help me decide", "which
-should I pick", "what would you go with" — applies the decision-reduction behavior to that one answer
-and then stops. No mode announcement, no checkpoint structure, nothing carried into the next message.
+### Without Brain Fog Mode
 
-Simplify mode is also one answer only. It activates when the user describes material as complex or too
-detailed and explicitly asks to simplify it, for example: "This is very complex; please simplify it."
-It preserves the outcome, constraints, and important caveats while removing unnecessary detail.
+> Start with **how a small system works**, then learn the AWS services that provide each part. That will give you a stronger foundation than memorizing service names.
+>
+> I’d use this four-week starting plan, with roughly 30–45 minutes a day:
+>
+> | Week | Learn | Practice |
+> |---|---|---|
+> | 1 | Linux basics, processes, files, HTTP, DNS, and networking | Follow what happens when a browser requests a page |
+> | 2 | AWS regions, availability zones, IAM, compute, and storage | Draw a system using EC2, S3, and a database; explain each component |
+> | 3 | VPCs, security groups, monitoring, and permissions | Deploy a small app in a learning environment and inspect its logs |
+> | 4 | Reliability, backups, automation, and cost | Describe how your app handles failure, restores data, and gets updated |
+>
+> For AWS fundamentals, use the official [Cloud Essentials learning path](https://aws.amazon.com/training/learn-about/cloud-practitioner/), which covers core services, security, and pricing. Once you have a small working system, use the [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html) to assess its reliability, security, and operating choices.
+>
+> For any personal AWS labs, check pricing, set a budget alert, and remove resources when finished. Budget alerts are notifications, not a spending cap.
+>
+> **Today:** Spend 30 minutes on the first Cloud Essentials lesson. Write down what a server does, what a network does, and what storage does. These are the building blocks you’ll keep returning to.
+>
+> Have you used Linux or written any code before, and are you studying for a job, a certification, or a project?
 
-It should not activate only because a task is complex, the user made a typo, or the user asked for a
-concise answer. Asking for a comparison or a list of pros and cons is a request for the option map,
-not for a decision, and is answered without a recommendation unless the user asks for one.
+### With Brain Fog Mode
 
-## What It Includes
+> **Begin with one small lesson: how a web request moves through an AWS system.** I'll assume you're starting with the basics; say `more advanced` if that is too easy.
+>
+> Use this simplified path:
+>
+> **Visitor → load balancer → web server → database**
+>
+> The load balancer distributes requests; the web server runs the application; the database stores its data. AWS's [web-and-database example, Overview and Security sections](https://docs.aws.amazon.com/en_en/vpc/latest/userguide/vpc-example-web-database-servers.html) shows that flow and how access between the parts is restricted.
+>
+> **Next:** On paper, draw those four boxes and add one sentence describing each box's job. Keep this first exercise on paper, so it needs no AWS account or paid resources.
 
-```text
-skills/
-`-- brain-fog-mode/
-    |-- SKILL.md
-    |-- README.md
-    |-- references/   # software, general work, health/safety, rationale
-    |-- assets/       # checkpoint, restart, and work-plan templates
-    `-- evals/        # trigger, behavioral, and safety eval cases
-```
+The control gives a four-week plan. With the mode active, the agent chooses one starting lesson and one next action.
 
-The core behavior lives in [skills/brain-fog-mode/SKILL.md](skills/brain-fog-mode/SKILL.md).
-Detailed guidance is loaded from `references/` only when needed.
+[Browse more examples](docs/examples.md), including shop sales, a cookie recipe, agent token usage, and keeping your place in work.
+
+## When It Applies
+
+| Request | Scope |
+| --- | --- |
+| “Brain fog mode,” “low-bandwidth mode,” or an explicit overload or interruption signal | Session mode, until disabled |
+| “Help me decide…” | That decision, including clarification replies; stops when answered or the task changes |
+| “This report is too much. Simplify it.” | One answer |
+
+Ordinary brevity, comparison, or summary requests do not activate it by themselves. [Full activation details](skills/brain-fog-mode/README.md#activation-examples).
 
 ## Beta Status
 
-Brain Fog Mode is ready for beta review and real-world feedback. The public package is intentionally
-small and text-only: Markdown, JSON eval files, and reusable templates.
+**30 behavioral cases · 38 activation cases · 10 safety probes.** [Browse the evals](skills/brain-fog-mode/evals/).
 
-Current audit status:
+Manual evaluations check instruction following. Benefits to users remain unproven; automation, security checks, and human safety review are still open.
 
-- static security review is in progress
-- source-faithfulness checks passed on 2026-08-04
-- behavioral eval automation is still open
-- human safety review is still open
-
-See [docs/security-audit.md](docs/security-audit.md) and
-[docs/source-faithfulness.md](docs/source-faithfulness.md).
-
-## What's Next?
-
-Short roadmap:
-
-- build repeatable evaluations for activation, response shape, safety, source faithfulness, accuracy,
-  and token spend
-- prototype an agent eval harness with paired runs, an LLM-as-judge pass, and human review
-- add a Promptfoo eval config for repeatable local and CI checks
-- gather user feedback to tune the prompt and response shape
-- enable GitHub Discussions and publish the included low-effort feedback form
+[Changelog](CHANGELOG.md) · [Audit status](docs/security-audit.md) · [Evidence](docs/source-faithfulness.md) · [Direction and roadmap](docs/direction.md)
 
 ## Reviewers And Feedback
 
-We are actively looking for users to try Brain Fog Mode and review whether it actually reduces task
-overhead in real work.
+Try one real task. Tell us **what helped, what added effort, and which assistant/model you used**.
 
-We especially appreciate review from psychologists, clinicians, cognitive accessibility specialists,
-and people with lived experience of brain fog or cognitive overload. Reviews are informal and scoped;
-they are not medical certification or product endorsement.
-
-With permission, we will give review attribution in the repo by name, role, and reviewed scope. Private
-feedback is also welcome through a channel agreed with the maintainer.
-
-Public user feedback belongs in the repository's **Feedback** GitHub Discussion form. The form source
-is `.github/DISCUSSION_TEMPLATE/feedback.yml`; enable Discussions and create a category with the slug
-`feedback` to activate it. Do not include sensitive health or work information in public submissions.
-
-Private user feedback and clinician reviews should use
-[docs/reviewer-questionnaire.md](docs/reviewer-questionnaire.md) through a private channel agreed with
-the maintainer.
-
-## Evaluation And Checks
-
-The eval files are plain JSON so they can be used by different agent clients and eval tools. You do
-not need any specific agent CLI to read or reuse them.
-
-Manual eval flow:
-
-1. Pick a case from `skills/brain-fog-mode/evals/`.
-2. Run a single `prompt` once, or deliver each entry in `turns` as a separate conversational turn, without the skill and with the skill available for automatic activation.
-3. Compare the outputs against the case assertions.
-4. Record accuracy, source faithfulness, response shape, token usage, and human notes.
-
-Automated eval: TBD. Planned work includes a Promptfoo config plus baseline/generic/skill runs with
-LLM-as-judge scoring and human review.
+Use the **Feedback** Discussion form when available. Keep health details and private work out of public posts. For private feedback or informal expert review, use the [reviewer questionnaire](docs/reviewer-questionnaire.md) and arrange a private return with the maintainer.
 
 ## Safety
 
-Brain Fog Mode is an interaction and accessibility aid. It is meant to help a user get through a task
-with less load, not to keep them working while unwell.
-
-If symptoms are severe, worsening, or feel unsafe, the skill should point the user toward a qualified
-healthcare professional or local emergency services instead of pushing through. It avoids
-country-specific hotlines, legal thresholds, diagnosis, medication, supplements, and cause claims.
+No health information is stored by default. For severe, worsening, or unsafe symptoms, the assistant should suggest qualified professional or local emergency help rather than encourage pushing through.
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+[MIT](LICENSE).

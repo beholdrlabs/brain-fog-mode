@@ -1,6 +1,7 @@
 # Security Audit
 
-Date: 2026-06-28 - Scope: the `brain-fog-mode` skill repository.
+Initial review: 2026-06-28. Latest release checks: 2026-10-02 for `0.3.0-beta`.
+Scope: the `brain-fog-mode` skill repository.
 
 ## Status
 
@@ -10,13 +11,13 @@ not complete until the remaining checks below are closed.
 ## What ships vs what does not
 
 - **Published skill:** `skills/brain-fog-mode/` (what `npx skills` installs).
-- **Repo-only public artifacts:** `docs/` (audit, reviewer, and source-faithfulness records).
+- **Repo-only public artifacts:** repository documentation, `docs/` (audit, reviewer, examples, direction, and source-faithfulness records), and `og-image.png`.
 - **Local-only internal artifacts:** `.beholdr/` internal notes and eval planning. This path is
   gitignored and should not be published.
 
 ## Checked so far
 
-- Repository is text-only: Markdown, JSON evals, and templates. No executable package code ships.
+- The published skill is text-only: Markdown, JSON evals, and templates. No executable package code ships. The repository also includes a social preview PNG.
 - Frontmatter is present; eval JSON files parse.
 - No secrets, credentials, hidden network calls, install scripts, or exfiltration instructions were
   found in the shipped skill files during static review.
@@ -25,16 +26,15 @@ not complete until the remaining checks below are closed.
 - Health-source summaries were checked for faithfulness on 2026-06-28: 6/6 passed. See
   [source-faithfulness.md](source-faithfulness.md).
 - A previous local-path leak in `README.md` was fixed by removing the tool-specific validator path.
+- On 2026-10-02, Gitleaks 8.30.1 found no secrets in a local snapshot of tracked and unignored release files. Ignored local artifacts were excluded; no repository content was uploaded to a scanner. This checks the release contents, not the complete Git history or runtime behavior.
 
 ## Open items
 
-1. **Security scan still needed.** Run a local secret/security scan before public release. Do not use
-   hosted scanners on private repo content without explicit approval and a clear data-handling review.
-2. **Behavioral evals not yet automated.** Build a repeatable eval gate over trigger behavior, response
+1. **Behavioral evals not yet automated.** Build a repeatable eval gate over trigger behavior, response
    shape, safety boundaries, source faithfulness, accuracy, and token spend.
-3. **Human safety review still needed.** Collect informal scoped review from qualified reviewers,
+2. **Human safety review still needed.** Collect informal scoped review from qualified reviewers,
    especially psychologists or clinicians, using [reviewer-questionnaire.md](reviewer-questionnaire.md).
-4. **Runtime caveat.** Static review does not prove runtime injection resistance. Runtime safety depends
+3. **Runtime caveat.** Static review does not prove runtime injection resistance. Runtime safety depends
    on the host agent, model behavior, tool permissions, and how the skill is installed.
 
 ## Beta audit checklist
@@ -44,7 +44,7 @@ not complete until the remaining checks below are closed.
 - [x] No local paths or usernames in shipped files
 - [x] Health-source faithfulness checked on 2026-06-28
 - [x] Local `quick_validate` passes
-- [ ] Local secret/security scan clean
+- [x] Local release-content secret scan clean (Gitleaks 8.30.1, 2026-10-02)
 - [ ] Behavioral eval harness created
 - [ ] LLM-as-judge eval pass reviewed by a human
 - [ ] Human safety review collected and attributed with permission

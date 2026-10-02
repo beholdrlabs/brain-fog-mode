@@ -12,7 +12,7 @@ body:
     attributes:
       label: Setup
       description: Tool, model, and skill version or commit, if known.
-      placeholder: "Example: Codex CLI, model name, 0.2.1-beta"
+      placeholder: "Example: Codex CLI, model name, 0.3.0-beta"
     validations:
       required: false
 

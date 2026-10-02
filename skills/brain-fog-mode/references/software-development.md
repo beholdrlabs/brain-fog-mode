@@ -11,6 +11,11 @@ Inspect enough context to understand the change before editing:
 - current worktree changes so the user's work is not overwritten;
 - the commands the repository already uses for formatting, testing, and validation.
 
+If implementation inputs are missing, state a small provisional completion target, such as
+"paginate one existing list using its current fetching and UI patterns", and name the first
+inspection you will perform before changes, including repository conventions. Ask only for the code
+or access needed for that step; do not imply inspection has already happened.
+
 Prefer targeted searches and batched reads. Avoid repeatedly reopening the same files, but independently verify conclusions that affect security, data integrity, or irreversible behavior.
 
 ## Plan Around Risk
@@ -66,21 +71,20 @@ When the user pauses or the work spans multiple turns, record only the state nee
 ```text
 Goal: <requested outcome>
 Done: <verified progress>
-Next: <one concrete action>
+Next: when <trigger>, <one concrete action>
 Blocked by: <none or one blocker>
 Changed: <relevant files>
 Verified: <checks run and results>
+Saved at: <path, or "this conversation only">
 ```
 
 Do not store secrets, credentials, tokens, private keys, or unnecessary sensitive data in checkpoints.
 
 ## Handoff
 
-Lead with the result. Then state:
-
-- files or behavior changed;
-- validation performed and its outcome;
-- remaining risk or unverified work;
-- one next action, when work remains.
+Follow the report order in `SKILL.md`: status, bottom line, **Needs you**, **Check this**,
+**Unverified**, remaining count. For code changes, the bottom line names the behavior that changed,
+**Check this** names the file or test most worth reviewing first, and **Unverified** lists checks that
+did not run and why.
 
 If the work is incomplete, say so plainly. If it is ready for commit or release, distinguish that from having actually committed, pushed, tagged, or deployed it.

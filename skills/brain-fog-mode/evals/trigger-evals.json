@@ -152,5 +152,23 @@
   {
     "query": "Simplify 6/8.",
     "should_trigger": false
+  },
+  {
+    "query": "This agent's report is way too long and overwhelming. What do I actually need to do?",
+    "should_trigger": true,
+    "level": "simplify"
+  },
+  {
+    "query": "This plan is too much for me right now. Simplify it so I can approve it.",
+    "should_trigger": true,
+    "level": "simplify"
+  },
+  {
+    "query": "Summarize this pull request description.",
+    "should_trigger": false
+  },
+  {
+    "query": "What does this CI log say?",
+    "should_trigger": false
   }
 ]
