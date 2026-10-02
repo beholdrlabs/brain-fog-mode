@@ -53,6 +53,8 @@ Measure weekly sessions, purchase conversion rate, average order value, acquisit
 
 What are your monthly website visits, orders, average order value and main customer countries? Those four figures would make the next recommendations much more precise.
 
+---
+
 ### With Brain Fog Mode
 
 **Start by making shipping and the final price consistent across the shop.** This is a concrete fix that could reduce buyer hesitation without spending on advertising.
@@ -107,6 +109,8 @@ Here’s a simple recipe for **soft white chocolate cookies**, with lightly cris
 5. Leave on the tray for 10 minutes, then transfer to a rack.
 
 For softer cookies, take them out before the centres look fully baked—they firm up as they cool. A little flaky salt on top balances the sweetness.
+
+---
 
 ### With Brain Fog Mode
 
@@ -167,6 +171,8 @@ For any personal AWS labs, check pricing, set a budget alert, and remove resourc
 
 Have you used Linux or written any code before, and are you studying for a job, a certification, or a project?
 
+---
+
 ### With Brain Fog Mode
 
 **Begin with one small lesson: how a web request moves through an AWS system.** I'll assume you're starting with the basics; say `more advanced` if that is too easy.
@@ -212,6 +218,8 @@ Complete [specific outcome]. Relevant context: [files or excerpts]. Keep changes
 If you use an API, also check [prompt caching](https://developers.openai.com/api/docs/guides/prompt-caching) for repeated context. Caching can reduce input cost, but it does not eliminate the tokens in that context.
 
 Which agent tools are you using, and was last week’s usage mostly coding, research, or automated workflows?
+
+---
 
 ### With Brain Fog Mode
 
@@ -259,6 +267,8 @@ Use that as the backbone of your two pages:
 Aim for a complete rough draft first. Reserve the final hour before 3 pm for editing and sending. If the notes do not support two full pages, flag the missing information rather than padding the update.
 
 Your first action is just to open the document and paste the draft above.
+
+---
 
 ### With Brain Fog Mode
 
@@ -309,6 +319,8 @@ Use the sample to estimate the work and expose decisions the team needs to make.
 
 Your first step is to draft the success statement and inventory ten pages. That gives the team something concrete to react to without committing you to a full cleanup.
 
+---
+
 ### With Brain Fog Mode
 
 **First, choose what the wiki cleanup should achieve.** Which outcome matters most?
@@ -347,6 +359,8 @@ The unresolved decision is whether attendees need to choose among several sessio
 Decide the session structure before registration opens. If you must proceed while that remains unknown, use A to collect registrations and make clear that session arrangements are still being finalized. Do not promise time-slot selection.
 
 B becomes worth reconsidering if multiple slots are confirmed and you can allocate the setup time and check its export.
+
+---
 
 ### With Brain Fog Mode
 
@@ -389,6 +403,8 @@ Hold the release. Fix and test account ownership enforcement. Make the recovery-
 
 This assessment is based only on the report; I have not inspected the patch.
 
+---
+
 ### With Brain Fog Mode
 
 **Do not approve shipping yet.** The report describes two release blockers:
@@ -430,6 +446,8 @@ Brain fog mode. I need to stop now. Keep a restart note here in the conversation
 - **Release status:** Nothing committed or deployed.
 
 **First step when restarting:** Check whether claiming the deduplication key is atomic across workers. Add a concurrency test that makes two workers attempt the same reminder and verifies that only one sends it. Resolve any race, then run the full suite.
+
+---
 
 ### With Brain Fog Mode
 

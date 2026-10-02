@@ -40,6 +40,15 @@ The agent handles small, reversible choices within scope and asks before consequ
 
 **Same task, two fresh-context agents.** The control loaded no skills; the other agent loaded this skill with Brain Fog Mode active. These are recorded responses from a small experiment.
 
+| Without Brain Fog Mode | With Brain Fog Mode |
+| ---: | ---: |
+| 233 words | 103 words |
+
+Counts describe the recorded response lengths.
+
+<details>
+<summary>Click to see details</summary>
+
 **Prompt:**
 
 Help me study systems engineering, AWS platform focused. I don't know where to begin.
@@ -65,6 +74,8 @@ For any personal AWS labs, check pricing, set a budget alert, and remove resourc
 
 Have you used Linux or written any code before, and are you studying for a job, a certification, or a project?
 
+---
+
 ### With Brain Fog Mode
 
 **Begin with one small lesson: how a web request moves through an AWS system.** I'll assume you're starting with the basics; say `more advanced` if that is too easy.
@@ -79,11 +90,7 @@ The load balancer distributes requests; the web server runs the application; the
 
 The control gives a four-week plan. With the mode active, the agent chooses one starting lesson and one next action.
 
-| Without Brain Fog Mode | With Brain Fog Mode |
-| ---: | ---: |
-| 233 words | 103 words |
-
-Counts describe the recorded response lengths.
+</details>
 
 [Browse more examples](docs/examples.md), including shop sales, a cookie recipe, agent token usage, and keeping your place in work.
 
